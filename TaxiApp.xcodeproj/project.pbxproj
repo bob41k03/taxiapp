@@ -1,0 +1,660 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		48053415240D016D00338734 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48053414240D016D00338734 /* GoogleService-Info.plist */; };
+		48053418240D23DA00338734 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48053417240D23DA00338734 /* LoginViewController.swift */; };
+		4805341A240D23E900338734 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48053419240D23E900338734 /* Login.storyboard */; };
+		4805341F240D26B300338734 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4805341E240D26B300338734 /* Registration.storyboard */; };
+		48053421240D26C600338734 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48053420240D26C600338734 /* RegistrationViewController.swift */; };
+		48053423240D772200338734 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48053422240D772200338734 /* FirebaseAuthManager.swift */; };
+		48080C3B243FC485007B664C /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48080C39243FC485007B664C /* OrderTableViewCell.swift */; };
+		483A80712435FC10005FF277 /* Addresses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483A80702435FC10005FF277 /* Addresses.storyboard */; };
+		483A80732435FC2A005FF277 /* AddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A80722435FC2A005FF277 /* AddressesViewController.swift */; };
+		483FB818243F483C004C6C56 /* OrdersHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483FB817243F483C004C6C56 /* OrdersHistoryViewController.swift */; };
+		483FB81A243F4851004C6C56 /* OrdersHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483FB819243F4851004C6C56 /* OrdersHistory.storyboard */; };
+		484C447E240E96BC0041BDF3 /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 484C447D240E96BC0041BDF3 /* ForgotPassword.storyboard */; };
+		484C4480240E96D80041BDF3 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484C447F240E96D80041BDF3 /* ForgotPasswordViewController.swift */; };
+		485EF1B8243BD0E3005401BF /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485EF1B7243BD0E3005401BF /* OrderModel.swift */; };
+		485EF1BD243CCE27005401BF /* OrderStatuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485EF1BC243CCE27005401BF /* OrderStatuses.swift */; };
+		4885B4322420BB17005A6F51 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885B4312420BB17005A6F51 /* UserModel.swift */; };
+		4885B4342420BC73005A6F51 /* FireStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885B4332420BC73005A6F51 /* FireStoreManager.swift */; };
+		4885B436242118A7005A6F51 /* FirestoreCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885B435242118A7005A6F51 /* FirestoreCollectionReference.swift */; };
+		4885B43824211D29005A6F51 /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885B43724211D29005A6F51 /* EncodableExtension.swift */; };
+		4885B43A24213081005A6F51 /* SnapshotExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4885B43924213081005A6F51 /* SnapshotExtension.swift */; };
+		48AE39912417FC3B0043AA8C /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE39902417FC3B0043AA8C /* AuthRouter.swift */; };
+		48C70D8F2419A29B00BBCDBB /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48C70D8E2419A29B00BBCDBB /* Profile.storyboard */; };
+		48C70D912419A2B600BBCDBB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C70D902419A2B600BBCDBB /* ProfileViewController.swift */; };
+		6ECBD7E31A10DFEB24F54F07 /* Pods_TaxiApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E75B218DC42769497879A84D /* Pods_TaxiApp.framework */; };
+		D8362DC72408486C00187B8E /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8362DC62408486C00187B8E /* MenuTableViewController.swift */; };
+		D8362DC92408487800187B8E /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8362DC82408487800187B8E /* Menu.storyboard */; };
+		D8D9452D2405B61600335CDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D9452C2405B61600335CDD /* AppDelegate.swift */; };
+		D8D945312405B61600335CDD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D945302405B61600335CDD /* MapViewController.swift */; };
+		D8D945342405B61600335CDD /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8D945322405B61600335CDD /* Map.storyboard */; };
+		D8D945362405B61700335CDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D945352405B61700335CDD /* Assets.xcassets */; };
+		D8D945392405B61700335CDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8D945372405B61700335CDD /* LaunchScreen.storyboard */; };
+		D8DDB452240ACD9700349C6E /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DDB451240ACD9700349C6E /* Storyboard.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		136F24E4F484B1F5A3699B78 /* Pods-TaxiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiApp.debug.xcconfig"; path = "Target Support Files/Pods-TaxiApp/Pods-TaxiApp.debug.xcconfig"; sourceTree = "<group>"; };
+		48053414240D016D00338734 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		48053417240D23DA00338734 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		48053419240D23E900338734 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		4805341E240D26B300338734 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		48053420240D26C600338734 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		48053422240D772200338734 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseAuthManager.swift; path = TaxiApp/Managers/FirebaseAuthManager.swift; sourceTree = SOURCE_ROOT; };
+		48080C39243FC485007B664C /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
+		483A80702435FC10005FF277 /* Addresses.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Addresses.storyboard; sourceTree = "<group>"; };
+		483A80722435FC2A005FF277 /* AddressesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesViewController.swift; sourceTree = "<group>"; };
+		483FB817243F483C004C6C56 /* OrdersHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersHistoryViewController.swift; sourceTree = "<group>"; };
+		483FB819243F4851004C6C56 /* OrdersHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrdersHistory.storyboard; sourceTree = "<group>"; };
+		484C447D240E96BC0041BDF3 /* ForgotPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPassword.storyboard; sourceTree = "<group>"; };
+		484C447F240E96D80041BDF3 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		485EF1B7243BD0E3005401BF /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
+		485EF1BC243CCE27005401BF /* OrderStatuses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatuses.swift; sourceTree = "<group>"; };
+		4885B4312420BB17005A6F51 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		4885B4332420BC73005A6F51 /* FireStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FireStoreManager.swift; path = TaxiApp/Managers/FireStoreManager.swift; sourceTree = SOURCE_ROOT; };
+		4885B435242118A7005A6F51 /* FirestoreCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreCollectionReference.swift; sourceTree = "<group>"; };
+		4885B43724211D29005A6F51 /* EncodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EncodableExtension.swift; path = TaxiApp/Extensions/EncodableExtension.swift; sourceTree = SOURCE_ROOT; };
+		4885B43924213081005A6F51 /* SnapshotExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SnapshotExtension.swift; path = TaxiApp/Extensions/SnapshotExtension.swift; sourceTree = SOURCE_ROOT; };
+		48AE39902417FC3B0043AA8C /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		48C70D8E2419A29B00BBCDBB /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		48C70D902419A2B600BBCDBB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D8362DC62408486C00187B8E /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		D8362DC82408487800187B8E /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		D8D945292405B61600335CDD /* TaxiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8D9452C2405B61600335CDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D8D945302405B61600335CDD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		D8D945332405B61600335CDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Map.storyboard; sourceTree = "<group>"; };
+		D8D945352405B61700335CDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8D945382405B61700335CDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D8D9453A2405B61700335CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8DDB451240ACD9700349C6E /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		E75B218DC42769497879A84D /* Pods_TaxiApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaxiApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F21AE141CCFE61A2EB3D5AEF /* Pods-TaxiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiApp.release.xcconfig"; path = "Target Support Files/Pods-TaxiApp/Pods-TaxiApp.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D8D945262405B61600335CDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ECBD7E31A10DFEB24F54F07 /* Pods_TaxiApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02275EA74E6DA7FCB17A436C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				136F24E4F484B1F5A3699B78 /* Pods-TaxiApp.debug.xcconfig */,
+				F21AE141CCFE61A2EB3D5AEF /* Pods-TaxiApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		48053416240D23B700338734 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				48053417240D23DA00338734 /* LoginViewController.swift */,
+				48053419240D23E900338734 /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		4805341D240D269D00338734 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				48053420240D26C600338734 /* RegistrationViewController.swift */,
+				4805341E240D26B300338734 /* Registration.storyboard */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		483FB816243F47F1004C6C56 /* Orders history */ = {
+			isa = PBXGroup;
+			children = (
+				483FB817243F483C004C6C56 /* OrdersHistoryViewController.swift */,
+				483FB819243F4851004C6C56 /* OrdersHistory.storyboard */,
+				48080C39243FC485007B664C /* OrderTableViewCell.swift */,
+			);
+			path = "Orders history";
+			sourceTree = "<group>";
+		};
+		484C447C240E96940041BDF3 /* Forgot Password */ = {
+			isa = PBXGroup;
+			children = (
+				484C447D240E96BC0041BDF3 /* ForgotPassword.storyboard */,
+				484C447F240E96D80041BDF3 /* ForgotPasswordViewController.swift */,
+			);
+			path = "Forgot Password";
+			sourceTree = "<group>";
+		};
+		485EF1B6243B79D3005401BF /* Addresses */ = {
+			isa = PBXGroup;
+			children = (
+				483A80702435FC10005FF277 /* Addresses.storyboard */,
+				483A80722435FC2A005FF277 /* AddressesViewController.swift */,
+			);
+			path = Addresses;
+			sourceTree = "<group>";
+		};
+		48AE398F2417FC110043AA8C /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				48AE39902417FC3B0043AA8C /* AuthRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		48C70D8D2419A26C00BBCDBB /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				48C70D8E2419A29B00BBCDBB /* Profile.storyboard */,
+				48C70D902419A2B600BBCDBB /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		9D4CE3DA3CC9046D93F4437D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E75B218DC42769497879A84D /* Pods_TaxiApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8362DBC2408420400187B8E /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				D8D945302405B61600335CDD /* MapViewController.swift */,
+				D8D945322405B61600335CDD /* Map.storyboard */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		D8362DBD2408421900187B8E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D8362DBE2408422000187B8E /* ViewControllers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D8362DBE2408422000187B8E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				483FB816243F47F1004C6C56 /* Orders history */,
+				485EF1B6243B79D3005401BF /* Addresses */,
+				48C70D8D2419A26C00BBCDBB /* Profile */,
+				48AE398F2417FC110043AA8C /* Routers */,
+				484C447C240E96940041BDF3 /* Forgot Password */,
+				4805341D240D269D00338734 /* Registration */,
+				48053416240D23B700338734 /* Login */,
+				D8362DC52408483200187B8E /* Menu */,
+				D8362DBC2408420400187B8E /* Map */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D8362DBF2408428E00187B8E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				48053422240D772200338734 /* FirebaseAuthManager.swift */,
+				4885B4332420BC73005A6F51 /* FireStoreManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D8362DC02408429600187B8E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4885B43724211D29005A6F51 /* EncodableExtension.swift */,
+				4885B43924213081005A6F51 /* SnapshotExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D8362DC2240842B200187B8E /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				D8DDB451240ACD9700349C6E /* Storyboard.swift */,
+				4885B4312420BB17005A6F51 /* UserModel.swift */,
+				4885B435242118A7005A6F51 /* FirestoreCollectionReference.swift */,
+				485EF1B7243BD0E3005401BF /* OrderModel.swift */,
+				485EF1BC243CCE27005401BF /* OrderStatuses.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		D8362DC3240842BF00187B8E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D8D945352405B61700335CDD /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D8362DC4240842DF00187B8E /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D8D9452C2405B61600335CDD /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		D8362DC52408483200187B8E /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				D8362DC62408486C00187B8E /* MenuTableViewController.swift */,
+				D8362DC82408487800187B8E /* Menu.storyboard */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		D8D945202405B61600335CDD = {
+			isa = PBXGroup;
+			children = (
+				D8D9452B2405B61600335CDD /* TaxiApp */,
+				D8D9452A2405B61600335CDD /* Products */,
+				02275EA74E6DA7FCB17A436C /* Pods */,
+				9D4CE3DA3CC9046D93F4437D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D8D9452A2405B61600335CDD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8D945292405B61600335CDD /* TaxiApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8D9452B2405B61600335CDD /* TaxiApp */ = {
+			isa = PBXGroup;
+			children = (
+				D8362DC4240842DF00187B8E /* AppDelegate */,
+				D8362DC2240842B200187B8E /* Objects */,
+				D8362DC02408429600187B8E /* Extensions */,
+				D8362DBF2408428E00187B8E /* Managers */,
+				D8362DBD2408421900187B8E /* UI */,
+				D8362DC3240842BF00187B8E /* Resources */,
+				D8D945372405B61700335CDD /* LaunchScreen.storyboard */,
+				D8D9453A2405B61700335CDD /* Info.plist */,
+				48053414240D016D00338734 /* GoogleService-Info.plist */,
+			);
+			path = TaxiApp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D8D945282405B61600335CDD /* TaxiApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8D9453D2405B61700335CDD /* Build configuration list for PBXNativeTarget "TaxiApp" */;
+			buildPhases = (
+				E87CCB8D6C60D5F384A00DDB /* [CP] Check Pods Manifest.lock */,
+				D8D945252405B61600335CDD /* Sources */,
+				D8D945262405B61600335CDD /* Frameworks */,
+				D8D945272405B61600335CDD /* Resources */,
+				D7E153F3BB727A95CC5B3F99 /* [CP] Copy Pods Resources */,
+				ED5E0BDBA5AAED0AF607D3EF /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TaxiApp;
+			productName = TaxiApp;
+			productReference = D8D945292405B61600335CDD /* TaxiApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D8D945212405B61600335CDD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = Developer;
+				TargetAttributes = {
+					D8D945282405B61600335CDD = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = D8D945242405B61600335CDD /* Build configuration list for PBXProject "TaxiApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D8D945202405B61600335CDD;
+			productRefGroup = D8D9452A2405B61600335CDD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8D945282405B61600335CDD /* TaxiApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D8D945272405B61600335CDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8D945392405B61700335CDD /* LaunchScreen.storyboard in Resources */,
+				D8D945362405B61700335CDD /* Assets.xcassets in Resources */,
+				483FB81A243F4851004C6C56 /* OrdersHistory.storyboard in Resources */,
+				4805341A240D23E900338734 /* Login.storyboard in Resources */,
+				4805341F240D26B300338734 /* Registration.storyboard in Resources */,
+				484C447E240E96BC0041BDF3 /* ForgotPassword.storyboard in Resources */,
+				48053415240D016D00338734 /* GoogleService-Info.plist in Resources */,
+				48C70D8F2419A29B00BBCDBB /* Profile.storyboard in Resources */,
+				483A80712435FC10005FF277 /* Addresses.storyboard in Resources */,
+				D8D945342405B61600335CDD /* Map.storyboard in Resources */,
+				D8362DC92408487800187B8E /* Menu.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D7E153F3BB727A95CC5B3F99 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TaxiApp/Pods-TaxiApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TaxiApp/Pods-TaxiApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TaxiApp/Pods-TaxiApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E87CCB8D6C60D5F384A00DDB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TaxiApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED5E0BDBA5AAED0AF607D3EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TaxiApp/Pods-TaxiApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TaxiApp/Pods-TaxiApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TaxiApp/Pods-TaxiApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8D945252405B61600335CDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				485EF1B8243BD0E3005401BF /* OrderModel.swift in Sources */,
+				483FB818243F483C004C6C56 /* OrdersHistoryViewController.swift in Sources */,
+				484C4480240E96D80041BDF3 /* ForgotPasswordViewController.swift in Sources */,
+				48053421240D26C600338734 /* RegistrationViewController.swift in Sources */,
+				48C70D912419A2B600BBCDBB /* ProfileViewController.swift in Sources */,
+				4885B43824211D29005A6F51 /* EncodableExtension.swift in Sources */,
+				4885B4342420BC73005A6F51 /* FireStoreManager.swift in Sources */,
+				483A80732435FC2A005FF277 /* AddressesViewController.swift in Sources */,
+				48053423240D772200338734 /* FirebaseAuthManager.swift in Sources */,
+				D8D945312405B61600335CDD /* MapViewController.swift in Sources */,
+				48080C3B243FC485007B664C /* OrderTableViewCell.swift in Sources */,
+				D8362DC72408486C00187B8E /* MenuTableViewController.swift in Sources */,
+				485EF1BD243CCE27005401BF /* OrderStatuses.swift in Sources */,
+				4885B43A24213081005A6F51 /* SnapshotExtension.swift in Sources */,
+				D8DDB452240ACD9700349C6E /* Storyboard.swift in Sources */,
+				48053418240D23DA00338734 /* LoginViewController.swift in Sources */,
+				48AE39912417FC3B0043AA8C /* AuthRouter.swift in Sources */,
+				D8D9452D2405B61600335CDD /* AppDelegate.swift in Sources */,
+				4885B436242118A7005A6F51 /* FirestoreCollectionReference.swift in Sources */,
+				4885B4322420BB17005A6F51 /* UserModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D8D945322405B61600335CDD /* Map.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8D945332405B61600335CDD /* Base */,
+			);
+			name = Map.storyboard;
+			sourceTree = "<group>";
+		};
+		D8D945372405B61700335CDD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8D945382405B61700335CDD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D8D9453B2405B61700335CDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D8D9453C2405B61700335CDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D8D9453E2405B61700335CDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 136F24E4F484B1F5A3699B78 /* Pods-TaxiApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K477UY2Q46;
+				INFOPLIST_FILE = TaxiApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.geekhub.taxi.TaxiApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D8D9453F2405B61700335CDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F21AE141CCFE61A2EB3D5AEF /* Pods-TaxiApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TaxiApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.geekhub.taxi.TaxiApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D8D945242405B61600335CDD /* Build configuration list for PBXProject "TaxiApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8D9453B2405B61700335CDD /* Debug */,
+				D8D9453C2405B61700335CDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8D9453D2405B61700335CDD /* Build configuration list for PBXNativeTarget "TaxiApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8D9453E2405B61700335CDD /* Debug */,
+				D8D9453F2405B61700335CDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D8D945212405B61600335CDD /* Project object */;
+}
