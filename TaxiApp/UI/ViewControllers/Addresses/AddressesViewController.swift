@@ -93,12 +93,12 @@ class AddressesViewController: PullUpController {
     }
 
     // update order status if order was canceled
-    func updateOrderStatus(order: Order, completion: @escaping (Order) -> Void) {
+    func updateOrderStatus() {
         let currentUserUid = Auth.auth().currentUser?.uid
-        let currentOrder = orders.filter{ $0.uid == currentUserUid && $0.status == OrderStatuses.new.rawValue }
-        var updateOrder = currentOrder[0]
-        updateOrder.status = OrderStatuses.canceled.rawValue
-        completion(updateOrder)
+        let currentOrder = orders.filter { $0.uid == currentUserUid && $0.status == OrderStatuses.new.rawValue }
+        let currentOrderId = currentOrder[0].id
+        let ref = FireStoreManager.shared.reference(to: .orders)
+        ref.document(currentOrderId!).setData(["status" : OrderStatuses.canceled.rawValue], merge: true)
     }
 
     // MARK: - IBActions
@@ -135,9 +135,8 @@ class AddressesViewController: PullUpController {
 
     @IBAction func toCancelTapped(_ sender: UIButton) {
 
-        updateOrderStatus(order: orders[0]) { updateOrder in
-            FireStoreManager.shared.update(for: updateOrder, in: .orders)
-        }
+        updateOrderStatus()
+
         cancelButton.isHidden = true
         orderButton.isHidden = false
         fromTextField.text = ""

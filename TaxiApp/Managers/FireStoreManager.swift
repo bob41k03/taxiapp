@@ -18,7 +18,7 @@ class FireStoreManager {
         FirebaseApp.configure()
     }
 
-    private func reference(to collectionReference: FirestoreCollectionReference) -> CollectionReference {
+    func reference(to collectionReference: FirestoreCollectionReference) -> CollectionReference {
         return Firestore.firestore().collection(collectionReference.rawValue)
     }
 
@@ -52,7 +52,7 @@ class FireStoreManager {
         do {
             let json = try encodableObject.toJson(excluding: ["id"])
             guard let id = encodableObject.id else { throw TaxiAppError.encodingError }
-            reference(to: collectionReference).document(id).updateData(json)
+            reference(to: collectionReference).document(id).setData(json, merge: true)
         } catch {
         }
     }

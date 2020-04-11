@@ -33,8 +33,8 @@ class OrdersHistoryViewController: UIViewController {
         group.enter()
         FireStoreManager.shared.read(from: .orders, returning: Order.self) { (orders) in
             self.orders = orders
-            self.group.leave()
         }
+        self.group.leave()
     }
 }
 
