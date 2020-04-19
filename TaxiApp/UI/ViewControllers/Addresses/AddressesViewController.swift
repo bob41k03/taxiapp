@@ -21,27 +21,26 @@ class AddressesViewController: PullUpController {
     @IBOutlet private weak var commentsTextField: UITextField!
     @IBOutlet private weak var orderButton: UIButton!
     @IBOutlet private weak var cancelButton: UIButton!
-    
+
     // MARK: - Variables
     override var pullUpControllerPreferredSize: CGSize {
-        return CGSize(width: UIScreen.main.bounds.width, height: 300)
+        let pullUpControllerSize = CGSize(width: UIScreen.main.bounds.width, height: 300)
+        return pullUpControllerSize
     }
     var orders = [Order]()
     var fromLocation: CLLocation? {
         didSet {
             if fromLocation != nil {
-
             }
         }
     }
     var toLocation: CLLocation?
 
-
     // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        FireStoreManager.shared.read(from: .orders, returning: Order.self) { (orders) in
+        FireStoreManager.shared.read(from: .orders, returning: Order.self) { orders in
             self.orders = orders
         }
         cancelButton.isHidden = true
@@ -54,9 +53,9 @@ class AddressesViewController: PullUpController {
 
     // validate order button
     @objc private func textFieldsIsNotEmpty() {
-        if (fromTextField.text?.isEmpty == false
+        if fromTextField.text?.isEmpty == false
             || toTextField.text?.isEmpty == false
-            || priceTextField.text?.isEmpty == false) {
+            || priceTextField.text?.isEmpty == false {
             orderButton.isEnabled = true
             orderButton.backgroundColor = #colorLiteral(red: 0.9278113842, green: 0.4737780094, blue: 0, alpha: 1)
         }
@@ -66,7 +65,7 @@ class AddressesViewController: PullUpController {
     func getFromCoordinate() {
         let address = fromTextField.text
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(address!) { (placemarks, error) in
+        geoCoder.geocodeAddressString(address!) { placemarks, _ in
             guard
                 let placemarks = placemarks,
                 let location = placemarks.first?.location
@@ -81,7 +80,7 @@ class AddressesViewController: PullUpController {
     func getToCoordinate() {
         let address = toTextField.text
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(address!) { (placemarks, error) in
+        geoCoder.geocodeAddressString(address!) { placemarks, _ in
             guard
                 let placemarks = placemarks,
                 let location = placemarks.first?.location
@@ -98,12 +97,12 @@ class AddressesViewController: PullUpController {
         let currentOrder = orders.filter { $0.uid == currentUserUid && $0.status == OrderStatuses.new.rawValue }
         let currentOrderId = currentOrder[0].id
         let ref = FireStoreManager.shared.reference(to: .orders)
-        ref.document(currentOrderId!).setData(["status" : OrderStatuses.canceled.rawValue], merge: true)
+        ref.document(currentOrderId!).setData(["status": OrderStatuses.canceled.rawValue], merge: true)
     }
 
     // MARK: - IBActions
 
-    @IBAction func fromTapped(_ sender: Any) {
+    @IBAction private func fromTapped(_ sender: Any) {
         fromTextField.resignFirstResponder()
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.view.tag = 1
@@ -111,29 +110,42 @@ class AddressesViewController: PullUpController {
         present(autocompleteController, animated: true, completion: nil)
     }
 
-    @IBAction func toTapped(_ sender: Any) {
+    @IBAction private func toTapped(_ sender: Any) {
         toTextField.resignFirstResponder()
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.view.tag = 2
         autocompleteController.delegate = self
         present(autocompleteController, animated: true, completion: nil)
     }
-    
-    @IBAction func toOrderTapped(_ sender: UIButton) {
+
+    @IBAction private func toOrderTapped(_ sender: UIButton) {
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd HH:mm"
+        let formattedDate = format.string(from: date)
         let currentUid = Auth.auth().currentUser!.uid
-        let newOrder = Order(from: fromTextField.text!, to: toTextField.text!, price: priceTextField.text!, comment: commentsTextField.text ?? "", uid: currentUid, status: OrderStatuses.new.rawValue, fromLatitudeCoordinate: (fromLocation?.coordinate.latitude)!, fromLongitudeCoordinate: (fromLocation?.coordinate.longitude)!, toLatitudeCoordinate: (toLocation?.coordinate.latitude)!, toLongitudeCoordinate: (toLocation?.coordinate.longitude)!)
+        let newOrder = Order(date: formattedDate,
+                             from: fromTextField.text!,
+                             to: toTextField.text!,
+                             price: priceTextField.text!,
+                             comment: commentsTextField.text ?? "",
+                             uid: currentUid, status: OrderStatuses.new.rawValue,
+                             fromLatitudeCoordinate: (fromLocation?.coordinate.latitude)!,
+                             fromLongitudeCoordinate: (fromLocation?.coordinate.longitude)!,
+                             toLatitudeCoordinate: (toLocation?.coordinate.latitude)!,
+                             toLongitudeCoordinate: (toLocation?.coordinate.longitude)!)
         FireStoreManager.shared.create(for: newOrder, in: .orders)
 
         let alert = UIAlertController(title: "Info", message: "Your order was created.", preferredStyle: .alert)
-        let OkAction = UIAlertAction(title: "OK", style: .default, handler: { alert -> Void in
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { _ -> Void in
             self.orderButton.isHidden = true
             self.cancelButton.isHidden = false
         })
-        alert.addAction(OkAction)
+        alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
 
-    @IBAction func toCancelTapped(_ sender: UIButton) {
+    @IBAction private func toCancelTapped(_ sender: UIButton) {
 
         updateOrderStatus()
 
@@ -147,8 +159,8 @@ class AddressesViewController: PullUpController {
         orderButton.backgroundColor = .gray
 
         let alert = UIAlertController(title: "Info", message: "Your order was canceled.", preferredStyle: .alert)
-        let OkAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(OkAction)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
 }

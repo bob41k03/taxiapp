@@ -30,7 +30,6 @@ class MapViewController: UIViewController {
 //        }
 //    }
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,14 +40,11 @@ class MapViewController: UIViewController {
         setupMenu()
     }
 
-
-
-
     // MARK: - IBAction
     @IBAction private func menuItemClicked(_ sender: UIBarButtonItem) {
         showMenu()
     }
-    
+
 // MARK: - Private
     private func showMenu() {
         if let menu = SideMenuManager.default.leftMenuNavigationController {
@@ -57,13 +53,14 @@ class MapViewController: UIViewController {
     }
 
     private func setupPullUpController() {
-        let pullUpController =  UIStoryboard(name: "Addresses",bundle: nil).instantiateViewController(withIdentifier: "AddressesViewController") as! AddressesViewController
-        addPullUpController(pullUpController, initialStickyPointOffset: 110, animated: true)
-        addChild(pullUpController)
-        self.view.addSubview(pullUpController.view)
-        pullUpController.didMove(toParent: self)
+        let pullUpController = UIStoryboard(name: "Addresses", bundle: nil)
+            .instantiateViewController(withIdentifier: "AddressesViewController") as? AddressesViewController
+        addPullUpController(pullUpController!, initialStickyPointOffset: 110, animated: true)
+        addChild(pullUpController!)
+        self.view.addSubview(pullUpController!.view)
+        pullUpController!.didMove(toParent: self)
     }
-    
+
     private func setupMenu() {
         let leftMenu = Storyboard.menu.instanceOf(viewController: MenuTableViewController.self)!
         let menuLeftNavigationController = SideMenuNavigationController(rootViewController: leftMenu)
@@ -78,7 +75,8 @@ class MapViewController: UIViewController {
         menuLeftNavigationController.setNavigationBarHidden(true, animated: true)
         SideMenuManager.default.leftMenuNavigationController = menuLeftNavigationController
         SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.navigationBar)
-        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.navigationController!.view, forMenu: .left)
+        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.navigationController!.view,
+                                                                  forMenu: .left)
     }
 }
 

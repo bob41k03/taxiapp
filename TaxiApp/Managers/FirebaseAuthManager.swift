@@ -12,7 +12,7 @@ import Firebase
 class FirebaseAuthManager {
 
     func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, _ in
             if (authResult?.user) != nil {
                 completionBlock(true)
             } else {
@@ -22,7 +22,7 @@ class FirebaseAuthManager {
     }
 
     func signIn(email: String, pass: String, completionBlock: @escaping (_ success: Bool) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: pass) { (result, error) in
+        Auth.auth().signIn(withEmail: email, password: pass) { _, error in
             if let error = error, let _ = AuthErrorCode(rawValue: error._code) {
                 completionBlock(false)
             } else {
@@ -38,7 +38,7 @@ class FirebaseAuthManager {
     }
 
     func resetPassword(email: String, completionBlock: @escaping (_ success: Bool) -> Void) {
-        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
             if error != nil {
                 completionBlock(true)
             } else {

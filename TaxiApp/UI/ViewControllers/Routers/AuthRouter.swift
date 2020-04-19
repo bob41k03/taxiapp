@@ -1,8 +1,6 @@
-
 import Foundation
 import Firebase
 import GoogleMaps
-
 
 class AuthRouter {
 
@@ -15,7 +13,7 @@ class AuthRouter {
     }
 
     func start() {
-        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+        handle = Auth.auth().addStateDidChangeListener { auth, _ in
             if Auth.auth().currentUser == nil {
                 self.navigateToLoginStoryboard()
             } else {
@@ -25,7 +23,8 @@ class AuthRouter {
     }
 
     private func navigateToLoginStoryboard() {
-        let loginVC = Storyboard.login.instanceOf(viewController: LoginViewController.self, identifier: "LoginViewController")!
+        let loginVC = Storyboard.login.instanceOf(viewController: LoginViewController.self,
+                                                  identifier: "LoginViewController")!
         navigationController.pushViewController(loginVC, animated: true)
        }
 

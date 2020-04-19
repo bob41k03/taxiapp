@@ -19,7 +19,8 @@ class FireStoreManager {
     }
 
     func reference(to collectionReference: FirestoreCollectionReference) -> CollectionReference {
-        return Firestore.firestore().collection(collectionReference.rawValue)
+        let collectionReference = Firestore.firestore().collection(collectionReference.rawValue)
+        return collectionReference
     }
 
     func create<T: Encodable>(for encodableObject: T, in collectionReference: FirestoreCollectionReference) {
@@ -27,13 +28,12 @@ class FireStoreManager {
             let json = try encodableObject.toJson()
             reference(to: collectionReference).addDocument(data: json)
         } catch {
-
         }
     }
 
     func read<T: Decodable>(from collectionReference: FirestoreCollectionReference,
                             returning objectType: T.Type, completion: @escaping ([T]) -> Void) {
-        reference(to: collectionReference).addSnapshotListener { (snapshot, _) in
+        reference(to: collectionReference).addSnapshotListener { snapshot, _ in
             guard let snapshot = snapshot else { return }
             do {
                 var objects = [T]()
@@ -43,12 +43,12 @@ class FireStoreManager {
                 }
                 completion(objects)
             } catch {
-
             }
         }
     }
 
-    func update<T: Encodable & Identifiable>(for encodableObject: T, in collectionReference: FirestoreCollectionReference) {
+    func update<T: Encodable & Identifiable>(for encodableObject: T,
+                                             in collectionReference: FirestoreCollectionReference) {
         do {
             let json = try encodableObject.toJson(excluding: ["id"])
             guard let id = encodableObject.id else { throw TaxiAppError.encodingError }

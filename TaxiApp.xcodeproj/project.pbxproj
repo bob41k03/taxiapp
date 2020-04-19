@@ -13,7 +13,6 @@
 		4805341F240D26B300338734 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4805341E240D26B300338734 /* Registration.storyboard */; };
 		48053421240D26C600338734 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48053420240D26C600338734 /* RegistrationViewController.swift */; };
 		48053423240D772200338734 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48053422240D772200338734 /* FirebaseAuthManager.swift */; };
-		48080C3B243FC485007B664C /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48080C39243FC485007B664C /* OrderTableViewCell.swift */; };
 		483A80712435FC10005FF277 /* Addresses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483A80702435FC10005FF277 /* Addresses.storyboard */; };
 		483A80732435FC2A005FF277 /* AddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483A80722435FC2A005FF277 /* AddressesViewController.swift */; };
 		483FB818243F483C004C6C56 /* OrdersHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483FB817243F483C004C6C56 /* OrdersHistoryViewController.swift */; };
@@ -49,7 +48,6 @@
 		4805341E240D26B300338734 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		48053420240D26C600338734 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		48053422240D772200338734 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseAuthManager.swift; path = TaxiApp/Managers/FirebaseAuthManager.swift; sourceTree = SOURCE_ROOT; };
-		48080C39243FC485007B664C /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		483A80702435FC10005FF277 /* Addresses.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Addresses.storyboard; sourceTree = "<group>"; };
 		483A80722435FC2A005FF277 /* AddressesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesViewController.swift; sourceTree = "<group>"; };
 		483FB817243F483C004C6C56 /* OrdersHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersHistoryViewController.swift; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 			children = (
 				483FB817243F483C004C6C56 /* OrdersHistoryViewController.swift */,
 				483FB819243F4851004C6C56 /* OrdersHistory.storyboard */,
-				48080C39243FC485007B664C /* OrderTableViewCell.swift */,
 			);
 			path = "Orders history";
 			sourceTree = "<group>";
@@ -301,6 +298,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8D9453D2405B61700335CDD /* Build configuration list for PBXNativeTarget "TaxiApp" */;
 			buildPhases = (
+				4852B854244A1B570043C625 /* SwiftLint */,
 				E87CCB8D6C60D5F384A00DDB /* [CP] Check Pods Manifest.lock */,
 				D8D945252405B61600335CDD /* Sources */,
 				D8D945262405B61600335CDD /* Frameworks */,
@@ -372,6 +370,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4852B854244A1B570043C625 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
 		D7E153F3BB727A95CC5B3F99 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -445,7 +461,6 @@
 				483A80732435FC2A005FF277 /* AddressesViewController.swift in Sources */,
 				48053423240D772200338734 /* FirebaseAuthManager.swift in Sources */,
 				D8D945312405B61600335CDD /* MapViewController.swift in Sources */,
-				48080C3B243FC485007B664C /* OrderTableViewCell.swift in Sources */,
 				D8362DC72408486C00187B8E /* MenuTableViewController.swift in Sources */,
 				485EF1BD243CCE27005401BF /* OrderStatuses.swift in Sources */,
 				4885B43A24213081005A6F51 /* SnapshotExtension.swift in Sources */,

@@ -18,12 +18,12 @@ class ForgotPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         warningLabel.alpha = 0
-
     }
 
     // Functions
     private func navigateToLoginStoryboard() {
-        let loginVC = Storyboard.login.instanceOf(viewController: LoginViewController.self, identifier: "LoginViewController")!
+        let loginVC = Storyboard.login.instanceOf(viewController: LoginViewController.self,
+                                                  identifier: "LoginViewController")!
         self.navigationController?.pushViewController(loginVC, animated: true)
     }
 
@@ -38,11 +38,11 @@ class ForgotPasswordViewController: UIViewController {
     }
 
     // MARK: IBActions
-    @IBAction func resetPasswordButton(_ sender: UIButton) {
-        guard let email = emailTextField.text, email != "" else { return }
+    @IBAction private func resetPasswordButton(_ sender: UIButton) {
+        guard let email = emailTextField.text, email.isEmpty == false else { return }
 
         let authManager = FirebaseAuthManager()
-        authManager.resetPassword(email: email) { (success) in
+        authManager.resetPassword(email: email) { success in
             if success {
                 self.showWarningLabel(withText: "Email incorrect")
             } else {

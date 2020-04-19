@@ -31,21 +31,27 @@ class RegistrationViewController: UIViewController {
         UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1,
                        options: .curveEaseOut, animations: { [weak self] in self?.warningLabel.alpha = 1
             })
-        { [weak self] complete in self?.warningLabel.alpha = 0
-        }
+        { [weak self] _ in self?.warningLabel.alpha = 0 }
     }
 
     // MARK: IBActions
-    @IBAction func registrationButtonTapped(_ sender: UIButton) {
-        guard let email = emailOrPhoneTextField.text, let password = passTextField.text, let confirmPassword = confirmPassTextField.text, email != "", password != "", confirmPassword != "" else {
-            showWarningLabel(withText: "All fields is required")
-            return
+    @IBAction private func registrationButtonTapped(_ sender: UIButton) {
+        guard let email = emailOrPhoneTextField.text,
+            let password = passTextField.text,
+            let confirmPassword = confirmPassTextField.text,
+            email.isEmpty == false,
+            password.isEmpty == false,
+            confirmPassword.isEmpty == false
+            else {
+                showWarningLabel(withText: "All fields is required")
+                return
         }
         if password == confirmPassword {
             let signUpManager = FirebaseAuthManager()
-            signUpManager.createUser(email: email, password: password) { [weak self] (success) in
+            signUpManager.createUser(email: email, password: password) { [weak self] _ in
                 let currentUserUid = Auth.auth().currentUser?.uid
-                let newUser = User(firstName: "", secondName: "", phoneNumber: "", birthDay: "", email: email, uid: currentUserUid!)
+                let newUser = User(firstName: "", secondName: "", phoneNumber: "",
+                                   birthDay: "", email: email, uid: currentUserUid!)
                 FireStoreManager.shared.create(for: newUser, in: .users)
                 self?.authRouter?.start()
             }
@@ -54,4 +60,3 @@ class RegistrationViewController: UIViewController {
         }
     }
 }
-

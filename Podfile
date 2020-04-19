@@ -3,6 +3,7 @@ platform :ios, '11.0'
 target 'TaxiApp' do
   use_frameworks!
   #use_modular_headers!
+  pod 'SwiftLint'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'SideMenu'

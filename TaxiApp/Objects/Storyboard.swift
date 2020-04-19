@@ -21,8 +21,9 @@ enum Storyboard: String {
     var instance: UIStoryboard {
         return UIStoryboard(name: rawValue, bundle: nil)
     }
-    
-    func instanceOf<T: UIViewController>(viewController: T.Type, identifier viewControllerIdentifier: String? = nil) -> T? {
+
+    func instanceOf<T: UIViewController>(viewController: T.Type,
+                                         identifier viewControllerIdentifier: String? = nil) -> T? {
         if let identifier = viewControllerIdentifier {
             return instance.instantiateViewController(withIdentifier: identifier) as? T
         }
