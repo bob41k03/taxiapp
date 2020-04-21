@@ -58,9 +58,7 @@ class LoginViewController: UIViewController {
         warningLabel.text = text
         UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1,
                        options: .curveEaseOut, animations: { [weak self] in self?.warningLabel.alpha = 1
-            })
-        { [weak self] _ in self?.warningLabel.alpha = 0
-        }
+        }) { [weak self] _ in self?.warningLabel.alpha = 0 }
     }
 
     // MARK: - IBActions

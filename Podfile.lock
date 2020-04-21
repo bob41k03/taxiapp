@@ -228,6 +228,8 @@ PODS:
     - "gRPC-C++ (= 0.0.9)"
     - leveldb-library (~> 1.22)
     - nanopb (~> 0.3.901)
+  - FirebaseFirestoreSwift (0.2):
+    - FirebaseFirestore (>= 1.6.1, ~> 1.6)
   - FirebaseInstallations (1.1.1):
     - FirebaseCore (~> 6.6)
     - GoogleUtilities/UserDefaults (~> 6.5)
@@ -306,6 +308,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Firestore
   - Firebase/Storage
+  - FirebaseFirestoreSwift
   - GoogleMaps
   - GooglePlaces
   - PullUpController
@@ -325,6 +328,7 @@ SPEC REPOS:
     - FirebaseCoreDiagnosticsInterop
     - FirebaseDatabase
     - FirebaseFirestore
+    - FirebaseFirestoreSwift
     - FirebaseInstallations
     - FirebaseStorage
     - GoogleAppMeasurement
@@ -355,6 +359,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
   FirebaseDatabase: 0144e0706a4761f1b0e8679572eba8095ddb59be
   FirebaseFirestore: a750487e2019ac35464c78311dcf2fde9d817c52
+  FirebaseFirestoreSwift: 0437bb10d83f8161a9131da1739998254c78fdf5
   FirebaseInstallations: acb3216eb9784d3b1d2d2d635ff74fa892cc0c44
   FirebaseStorage: b43ee271294227e1a3225544b073f3b49b427f46
   GoogleAppMeasurement: e49be3954045b17d046f271b9cc1ec052bad9702
@@ -373,6 +378,6 @@ SPEC CHECKSUMS:
   SideMenu: 4a891be552d30bb6fa87ad404d62e485f8450c34
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
-PODFILE CHECKSUM: cb7e54bbf4ca1b093ad41ee4e7de147a85cbd535
+PODFILE CHECKSUM: b42b35cdbfc562e5263749b6718a6e569b7f10f6
 
 COCOAPODS: 1.9.1

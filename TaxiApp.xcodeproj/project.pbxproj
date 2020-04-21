@@ -298,8 +298,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8D9453D2405B61700335CDD /* Build configuration list for PBXNativeTarget "TaxiApp" */;
 			buildPhases = (
-				4852B854244A1B570043C625 /* SwiftLint */,
 				E87CCB8D6C60D5F384A00DDB /* [CP] Check Pods Manifest.lock */,
+				4852B854244A1B570043C625 /* SwiftLint */,
 				D8D945252405B61600335CDD /* Sources */,
 				D8D945262405B61600335CDD /* Frameworks */,
 				D8D945272405B61600335CDD /* Resources */,

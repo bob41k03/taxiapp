@@ -20,7 +20,8 @@ class MenuTableViewController: UITableViewController {
 // MARK: - Variables
     var users = [User]()
     var imageReference: StorageReference {
-           return Storage.storage().reference().child("images")
+        let imageReference = Storage.storage().reference().child("images")
+           return imageReference
        }
 
 // MARK: - Tableview delegate
@@ -72,7 +73,7 @@ class MenuTableViewController: UITableViewController {
     func downloadImage() {
         let uid = Auth.auth().currentUser?.uid
         let downloadImageRef = imageReference.child("\(String(describing: uid!)).jpg")
-        downloadImageRef.getData(maxSize: 1024*1024*12) { (dataResponse, _) in
+        downloadImageRef.getData(maxSize: 1024 * 1024 * 12) { dataResponse, _ in
             if let data = dataResponse {
                 let image = UIImage(data: data)
                 self.userImageView.image = image

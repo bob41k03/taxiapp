@@ -193,7 +193,8 @@ class ProfileViewController: UITableViewController, UITextFieldDelegate {
                 self.currentUserPass = passwordTextField
             })
 
-            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: {(_: UIAlertAction!) -> Void in })
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default,
+                                             handler: { (_: UIAlertAction!) -> Void in })
             alertController.addAction(sendAction)
             alertController.addAction(cancelAction)
             self.present(alertController, animated: true, completion: nil)
@@ -217,7 +218,7 @@ class ProfileViewController: UITableViewController, UITextFieldDelegate {
     func downloadImage() {
         let uid = Auth.auth().currentUser?.uid
         let downloadImageRef = imageReference.child("\(String(describing: uid!)).jpg")
-        downloadImageRef.getData(maxSize: 1024*1024*12) { dataResponse, _ in
+        downloadImageRef.getData(maxSize: 1024 * 1024 * 12 ) { dataResponse, _ in
             if let data = dataResponse {
                 let image = UIImage(data: data)
                 self.userImage.image = image

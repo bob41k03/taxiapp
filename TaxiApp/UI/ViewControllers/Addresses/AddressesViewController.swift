@@ -92,12 +92,12 @@ class AddressesViewController: PullUpController {
     }
 
     // update order status if order was canceled
-    func updateOrderStatus() {
+    func updateOrderStatus(completion: @escaping (Order) -> Void) {
         let currentUserUid = Auth.auth().currentUser?.uid
         let currentOrder = orders.filter { $0.uid == currentUserUid && $0.status == OrderStatuses.new.rawValue }
-        let currentOrderId = currentOrder[0].id
-        let ref = FireStoreManager.shared.reference(to: .orders)
-        ref.document(currentOrderId!).setData(["status": OrderStatuses.canceled.rawValue], merge: true)
+        var updateOrder = currentOrder[0]
+        updateOrder.status = OrderStatuses.canceled.rawValue
+        completion(updateOrder)
     }
 
     // MARK: - IBActions
@@ -126,7 +126,7 @@ class AddressesViewController: PullUpController {
         let currentUid = Auth.auth().currentUser!.uid
         let newOrder = Order(date: formattedDate,
                              from: fromTextField.text!,
-                             to: toTextField.text!,
+                             toDestination: toTextField.text!,
                              price: priceTextField.text!,
                              comment: commentsTextField.text ?? "",
                              uid: currentUid, status: OrderStatuses.new.rawValue,
@@ -147,8 +147,6 @@ class AddressesViewController: PullUpController {
 
     @IBAction private func toCancelTapped(_ sender: UIButton) {
 
-        updateOrderStatus()
-
         cancelButton.isHidden = true
         orderButton.isHidden = false
         fromTextField.text = ""
@@ -162,6 +160,10 @@ class AddressesViewController: PullUpController {
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
+
+        updateOrderStatus { updateOrder in
+            FireStoreManager.shared.update(for: updateOrder, in: .orders)
+        }
     }
 }
 

@@ -12,7 +12,7 @@ struct Order: Codable, Identifiable {
     var id: String? = nil
     var date: String
     var from: String
-    var to: String
+    var toDestination: String
     var price: String
     var comment: String?
     var uid: String
@@ -23,13 +23,13 @@ struct Order: Codable, Identifiable {
     var toLongitudeCoordinate: Double
 
     init(date: String, from: String,
-         to: String, price: String,
+         toDestination: String, price: String,
          comment: String, uid: String,
          status: String, fromLatitudeCoordinate: Double,
          fromLongitudeCoordinate: Double, toLatitudeCoordinate: Double, toLongitudeCoordinate: Double) {
         self.date = date
         self.from = from
-        self.to = to
+        self.toDestination = toDestination
         self.price = price
         self.comment = comment
         self.uid = uid

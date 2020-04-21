@@ -11,6 +11,7 @@ import Firebase
 class OrderCell: UITableViewCell {
     // MARK: - IBOutlets
     @IBOutlet fileprivate weak var dateLabel: UILabel!
+    @IBOutlet fileprivate weak var statusLabel: UILabel!
     @IBOutlet fileprivate weak var fromLabel: UILabel!
     @IBOutlet fileprivate weak var toLabel: UILabel!
     @IBOutlet fileprivate weak var priceLabel: UILabel!
@@ -28,6 +29,7 @@ class OrdersHistoryViewController: UITableViewController {
         getOrders()
     }
 
+    // fetch current user orders from Firebase
     func getOrders() {
         FireStoreManager.shared.read(from: .orders, returning: Order.self) { orders in
             let orders = orders
@@ -44,10 +46,26 @@ class OrdersHistoryViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrderCell", for: indexPath) as? OrderCell
+
         cell?.dateLabel.text = orders[indexPath.row].date
+        cell?.statusLabel.text = orders[indexPath.row].status.capitalized
         cell?.fromLabel.text = orders[indexPath.row].from
-        cell?.toLabel.text = orders[indexPath.row].to
-        cell?.priceLabel.text = orders[indexPath.row].price
+        cell?.toLabel.text = orders[indexPath.row].toDestination
+        cell?.priceLabel.text = "\(orders[indexPath.row].price) UAH"
+
+        switch orders[indexPath.row].status {
+        case OrderStatuses.new.rawValue:
+            cell?.statusLabel.textColor = .orange
+        case OrderStatuses.canceled.rawValue:
+            cell?.statusLabel.textColor = .red
+        case OrderStatuses.inProgress.rawValue:
+            cell?.statusLabel.textColor = .blue
+            cell?.statusLabel.text = "In Progress"
+        case OrderStatuses.done.rawValue:
+            cell?.statusLabel.textColor = .green
+        default:
+            cell?.statusLabel.textColor = .black
+        }
         return cell!
     }
 }

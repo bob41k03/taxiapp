@@ -18,7 +18,6 @@ extension DocumentSnapshot {
         if includingId {
             documentJson!["id"] = documentID
         }
-
         let documentData = try JSONSerialization.data(withJSONObject: documentJson!, options: [])
         let decodedObject = try JSONDecoder().decode(objectType, from: documentData)
         return decodedObject

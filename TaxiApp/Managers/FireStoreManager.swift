@@ -52,7 +52,7 @@ class FireStoreManager {
         do {
             let json = try encodableObject.toJson(excluding: ["id"])
             guard let id = encodableObject.id else { throw TaxiAppError.encodingError }
-            reference(to: collectionReference).document(id).setData(json, merge: true)
+            reference(to: collectionReference).document(id).setData(json)
         } catch {
         }
     }

@@ -19,7 +19,8 @@ enum Storyboard: String {
     case ordersHistory = "OrdersHistory"
 
     var instance: UIStoryboard {
-        return UIStoryboard(name: rawValue, bundle: nil)
+        let storyboard = UIStoryboard(name: rawValue, bundle: nil)
+        return storyboard
     }
 
     func instanceOf<T: UIViewController>(viewController: T.Type,
