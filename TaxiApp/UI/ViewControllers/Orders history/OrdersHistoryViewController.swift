@@ -68,4 +68,12 @@ class OrdersHistoryViewController: UITableViewController {
         }
         return cell!
     }
+
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCell.EditingStyle,
+                            forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else { return }
+        let order = orders[indexPath.row]
+        FireStoreManager.shared.delete(order, in: .orders)
+    }
 }

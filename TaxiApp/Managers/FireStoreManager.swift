@@ -56,4 +56,12 @@ class FireStoreManager {
         } catch {
         }
     }
+
+    func delete<T: Identifiable>(_ identifiableObject: T, in collectionReference: FirestoreCollectionReference) {
+        do {
+            guard let id = identifiableObject.id else { throw TaxiAppError.encodingError }
+            reference(to: collectionReference).document(id).delete()
+        } catch {
+        }
+    }
 }
